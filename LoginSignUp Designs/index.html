@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <div class="form">
+        <form action="" method="post" class="login-form">
+            <i class="fas fa-user-circle"></i>
+            <input class="user-input" type="text" name="" placeholder="Username" required>
+            <input type="password" name="" id="" class="user-input" placeholder="Password" required>
+
+            <div class="options-01">
+                <label for="" class="remember-me">
+                    <input type="checkbox" name="" id=""> Remember me
+                </label>
+                <a href="#">Forget Password?</a>
+            </div>
+            <input class="btn" type="button" value="Login">
+            <div class="options-02">
+                <p>Not Registered? <a href="#"> Create an Account</a></p>
+            </div>
+        </form>
+
+        <form action="" class="signup-form" method="post">
+            <i class="fas fa-user-plus"></i>
+            <input type="text" class="user-input" placeholder="Username" required>
+            <input type="email" class="user-input" placeholder="Email Address" required>
+            <input type="password" class="user-input" placeholder="Password" required>
+            <input type="submit" class="btn" value="SIGN UP">
+            <div class="options-02">
+                <p>Already Registered? <a href="#">Sign In</a></p>
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript">
+        $('.options-02 a').click(function(){
+            $('form').animate({
+                height: "toggle", opacity: "toggle"
+            }, "slow");
+        });
+    </script>
+</body>
+
+</html>

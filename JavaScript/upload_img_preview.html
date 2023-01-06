@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image and Preview</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    img {
+        border-radius: 100px;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        border: solid 0.1px black;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    input {
+        padding: 10px;
+        font-family: sans-serif;
+    }
+</style>
+
+<body>
+    <form method="post" action="update_profile">
+        <img id="profile-img-preview" src="artificial-intelligence.jpg">
+        <input id="profile-img-select" type="file" accept="image/*" onchange="previewImage(event);">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <script>
+        const previewImage = (event) => {
+            const imageFiles = event.target.files;
+            const imageFilesLength = imageFiles.length;
+            console.log(imageFilesLength);
+
+            if (imageFilesLength > 0) {
+                const imageSrc = URL.createObjectURL(imageFiles[0]);
+                const imagePreviewElement = document.querySelector("#profile-img-preview");
+                imagePreviewElement.src = imageSrc;
+                imagePreviewElement.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

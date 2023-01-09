@@ -1,0 +1,14 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function btn_close() {
+            document.getElementById("message_block").style.display = 'none';
+        }
+
+        jQuery.get("http://ipinfo.io", function(e) {
+            if (e.country == "IN") {
+                document.getElementById("amazon_ad").display = 'none';
+            } else {
+                document.getElementById("amazon_ad").display = 'none';
+            }
+        }, "jsonp")
+    </script>
